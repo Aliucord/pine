@@ -1,2 +1,2 @@
-include ':app', ':core', ':xposed', ':enhances'
+include ':core'
 rootProject.name='Pine'

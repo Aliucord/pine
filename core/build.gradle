@@ -1,3 +1,7 @@
+plugins {
+    id "maven-publish"
+}
+
 apply plugin: 'com.android.library'
 
 android {
@@ -62,3 +66,17 @@ publish {
     website = rootProject.website
 }
  */
+
+afterEvaluate {
+    publishing {
+        publications {
+            debug(MavenPublication) {
+                from components.debug
+
+                groupId = 'top.canyie'
+                artifactId = 'pine'
+                version = '1.0-SNAPSHOT'
+            }
+        }
+    }
+}
